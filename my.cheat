@@ -13,18 +13,18 @@ $ tag: git tag
 
 
 # Create a lightweight tag at the current commit
-git tag
+git tag <tag_name>
 
 # Create a lightweight tag at a past commit
-git tag <commit_id>
+git tag  <commit_id>
 
 $ commit_id: git log --pretty=oneline | awk '{print $1}'
 
 # Create an annotated tag at the current commit
-git tag -a
+git tag -a <tag_name>
 
 # Create an annotated tag at a past commit
-git tag -a <commit_id>
+git tag -a <tag_name> <commit_id>
 
 $ commit_id: git log --pretty=oneline | awk '{print $1}'
 
