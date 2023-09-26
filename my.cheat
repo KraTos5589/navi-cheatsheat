@@ -16,7 +16,7 @@ $ tag: git tag
 git tag <tag_name>
 
 # Create a lightweight tag at a past commit
-git tag  <commit_id>
+git tag <tag_name> <commit_id>
 
 $ commit_id: git log --pretty=oneline | awk '{print $1}'
 
