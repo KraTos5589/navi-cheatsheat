@@ -5,12 +5,10 @@ git tag -d <tag>
 
 $ tag: git tag
 
-
 # Delete a remote tag
 git push --delete origin <tag>
 
 $ tag: git tag
-
 
 # Create a lightweight tag at the current commit
 git tag <tag_name>
@@ -27,6 +25,14 @@ git tag -a <tag_name>
 git tag -a <tag_name> <commit_id>
 
 $ commit_id: git log --pretty=oneline | awk '{print $1}'
+
+# Push All Tags to remote
+git push origin --tags
+
+# Push a tag to remote
+git push origin <tag_name>
+
+$ tag_name: git tag
 
 
 % shell
