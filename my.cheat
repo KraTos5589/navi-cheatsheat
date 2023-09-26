@@ -10,3 +10,26 @@ $ tag: git tag
 git push --delete origin <tag>
 
 $ tag: git tag
+
+
+# Create a lightweight tag at the current commit
+git tag
+
+# Create a lightweight tag at a past commit
+git tag <commit_id>
+
+$ commit_id: git log --pretty=oneline | awk '{print $1}'
+
+# Create an annotated tag at the current commit
+git tag -a
+
+# Create an annotated tag at a past commit
+git tag -a <commit_id>
+
+$ commit_id: git log --pretty=oneline | awk '{print $1}'
+
+
+% shell
+
+# Print single column
+awk '{print $<column_number>}'
