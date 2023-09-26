@@ -1,0 +1,7 @@
+% git, code
+
+# Delete local tag
+git tag -d <tag>
+
+$ tag: git tag
+
