@@ -16,7 +16,7 @@ git tag <tag_name>
 # Create a lightweight tag at a past commit
 git tag <tag_name> <commit_id>
 
-$ commit_id: git log --pretty=format:"%h"
+$ commit_id: git log --pretty=oneline | awk '{print $1}'
 
 # Create an annotated tag at the current commit
 git tag -a <tag_name>
@@ -24,7 +24,7 @@ git tag -a <tag_name>
 # Create an annotated tag at a past commit
 git tag -a <tag_name> <commit_id>
 
-$ commit_id: git log --pretty=format:"%h"
+$ commit_id: git log --pretty=oneline | awk '{print $1}'
 
 # Push All Tags to remote
 git push origin --tags
@@ -46,19 +46,24 @@ git log --pretty=format:"%s" --reverse
 # Print All Commit messages between 2 commits
 git log <from>...<to> --pretty=format:"%s"
 
-$ from: git log --pretty=format:"%h"
-$ to: git log --pretty=format:"%h"
+$ from: git log --pretty=oneline | awk '{print $1}'
+$ to: git log --pretty=oneline | awk '{print $1}'
 
 # Print All Commit messages between 2 commits in reverse order
 git log <from>...<to> --pretty=format:"%s" --reverse
 
-$ from: git log --pretty=format:"%h"
-$ to: git log --pretty=format:"%h"
+$ from: git log --pretty=oneline | awk '{print $1}'
+$ to: git log --pretty=oneline | awk '{print $1}'
 
-# Print All Commit messages from a tag till HEAD in reverse order
-git log <tag>...HEAD --pretty=format:"%s" --reverse
 
-$ tag: git tag
+
+% git, commit
+
+# Squash last N commits.
+git reset --hard HEAD~<number_of_commits> && git merge --squash HEAD@{1} && git commit
+
+
+
 
 % shell
 
