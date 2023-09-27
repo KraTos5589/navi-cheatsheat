@@ -1,4 +1,4 @@
-% git, code
+% git, tag
 
 # Delete local tag
 git tag -d <tag>
@@ -16,7 +16,7 @@ git tag <tag_name>
 # Create a lightweight tag at a past commit
 git tag <tag_name> <commit_id>
 
-$ commit_id: git log --pretty=oneline | awk '{print $1}'
+$ commit_id: git log --pretty=format:"%h"
 
 # Create an annotated tag at the current commit
 git tag -a <tag_name>
@@ -24,7 +24,7 @@ git tag -a <tag_name>
 # Create an annotated tag at a past commit
 git tag -a <tag_name> <commit_id>
 
-$ commit_id: git log --pretty=oneline | awk '{print $1}'
+$ commit_id: git log --pretty=format:"%h"
 
 # Push All Tags to remote
 git push origin --tags
@@ -34,6 +34,31 @@ git push origin <tag_name>
 
 $ tag_name: git tag
 
+
+% git, log
+
+# Print All Commit messages 
+git log --pretty=format:"%s"
+
+# Print All Commit messages reverse order
+git log --pretty=format:"%s" --reverse
+
+# Print All Commit messages between 2 commits
+git log <from>...<to> --pretty=format:"%s"
+
+$ from: git log --pretty=format:"%h"
+$ to: git log --pretty=format:"%h"
+
+# Print All Commit messages between 2 commits in reverse order
+git log <from>...<to> --pretty=format:"%s" --reverse
+
+$ from: git log --pretty=format:"%h"
+$ to: git log --pretty=format:"%h"
+
+# Print All Commit messages from a tag till HEAD in reverse order
+git log <tag>...HEAD --pretty=format:"%s" --reverse
+
+$ tag: git tag
 
 % shell
 
